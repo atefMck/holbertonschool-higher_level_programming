@@ -13,7 +13,7 @@ listint_t *fastp = list;
 listint_t *slowp = list;
 if (list == NULL || list->next == NULL)
 return (0);
-while (fastp->next->next)
+while (fastp && fastp->next && fastp->next->next)
 {
 slowp = slowp->next;
 fastp = fastp->next->next;
