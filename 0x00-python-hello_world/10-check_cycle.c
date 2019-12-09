@@ -15,7 +15,7 @@ fastp = list;
 slowp = list;
 if (list == NULL || list->next == NULL)
 return (0);
-while (fastp->next->next)
+while (slowp && slowp->next->next && fastp && fastp->next)
 {
 slowp = slowp->next;
 fastp = fastp->next->next;
