@@ -9,13 +9,11 @@
 */
 int check_cycle(listint_t *list)
 {
-listint_t *fastp;
-listint_t *slowp;
-fastp = list;
-slowp = list;
+listint_t *fastp = list;;
+listint_t *slowp = list;;
 if (list == NULL || list->next == NULL)
 return (0);
-while (slowp && slowp->next->next && fastp && fastp->next)
+while (fastp->next->next)
 {
 slowp = slowp->next;
 fastp = fastp->next->next;
