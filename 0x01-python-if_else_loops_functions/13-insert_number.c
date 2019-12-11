@@ -30,7 +30,7 @@ if (newNode->n > curr->next->n)
 curr = curr->next;
 else
 {
-newNode->next = curr->next->next;
+newNode->next = curr->next;
 curr->next = newNode;
 break;
 }
