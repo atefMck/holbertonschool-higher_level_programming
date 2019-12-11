@@ -24,7 +24,7 @@ newNode = malloc(sizeof(listint_t));
 if (!newNode)
 return (NULL);
 newNode->n = number;
-while (newNode->n > curr->n && curr->next)
+while (curr->next && newNode->n > curr->next->n )
 curr = curr->next;
 newNode->next = curr->next;
 curr->next = newNode;
