@@ -82,21 +82,3 @@ class Square:
                 if i != self.__size - 1:
                     print += "\n"
         return (print)
-
-my_square = Square(5, (0, 0))
-print(my_square)
-
-print("--")
-
-my_square = Square(5, (4, 1))
-print(my_square)
-
-print("--")
-
-my_square = Square(5)
-print(my_square)
-
-print("--")
-
-my_square = Square(0)
-print(my_square)
