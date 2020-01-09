@@ -76,9 +76,19 @@ class Square:
             for i in range(self.__size):
                 if hasattr(self, 'position'):
                     for l in range(self.__position[0]):
-                        print += " "
+                        if l != self.__position[0] - 1:
+                            print += " "
                 for j in range(self.__size):
                     print += "#"
                 if i != self.__size - 1:
                     print += "\n"
         return (print)
+
+
+my_square = Square(5, (0, 0))
+print(my_square)
+
+print("--")
+
+my_square = Square(5, (4, 1))
+print(my_square)
