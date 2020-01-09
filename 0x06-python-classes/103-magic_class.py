@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import math
+
 class MagicClass:
     def __init(self, radius):
         if type(radius) is not int:
