@@ -1,0 +1,17 @@
+This is a doctest based regression suite for 2-matrix_divided.py
+Each '>>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob") # doctest: +NORMALIZE_WHITESPACE
+My name is Bob
+>>> try:
+...   say_my_name(12, "Smith")
+... except Exception as e:
+...   print(e)
+first_name must be a string

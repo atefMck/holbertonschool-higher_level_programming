@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-File containing the add integer method.
-a is the first integer
-b is the second integer
+File containing the matrix_divided method.
+matrix is the matrix of integers or floats
+div is the integet to devide it by
 """
 
 def matrix_divided(matrix, div):
-    """ 'add_integer(a, b)' function that adds two integers/floats
-        a is the first integer
-        b is the second integer """
+    """ 'matrix_divided(matrix, div)' function that divides a matris
+        matrix is the matrix of integers or floats
+        div is the integet to devide it by """
     error1 = "matrix must be a matrix (list of lists) of integers/floats"
     error2 = "Each row of the matrix must have the same size"
     error3 = "div must be a number"
