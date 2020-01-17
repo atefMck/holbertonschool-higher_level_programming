@@ -53,51 +53,60 @@ class Queen:
 	def checkAttack(self, grid):
 		enemy = False;
 
+		# Checking first diagonal
 		checkx = self.cord[0]
 		checky = self.cord[1]
 		checkx += 1
 		checky += 1
 		while checkx != self.cord[0] and checky != self.cord[1]:
+			if checkx > 3 or checky > 3:
+				checkx -= checky
+				checky -= checky
+			if checkx == self.cord[0] and checky == self.cord[1]:
+				break
 			if grid.gridcord[checkx][checky][2] == "Q":
 				enemy = True
 			checkx += 1
 			checky += 1
-			if checkx > 3 or checky > 3:
-				checky -= checkx
-				checkx -= checkx
 
+		# Checking second diagonal
 		checkx = self.cord[0]
 		checky = self.cord[1]
 		checkx -= 1
 		checky += 1
 		while checkx != self.cord[0] and checky != self.cord[1]:
-			if grid.gridcord[checkx][checky][2] == "Q":
-				enemy = True
-			checkx -= 1
-			checky += 1
-			if checkx < 0 or checky < 0:
+			if checkx < 0 or checky > 3:
 				checkx += checky
 				checky -= checky
-
-		checkx = self.cord[0]
-		checky = self.cord[1]
-		checky += 1
-		while checky != self.cord[1]:
+			if checkx == self.cord[0] and checky == self.cord[1]:
+				break
 			if grid.gridcord[checkx][checky][2] == "Q":
 				enemy = True
+			print("checking: ", checkx, checky)
+			checkx -= 1
 			checky += 1
-			if checky > 3:
-				checky = 0
 
-		checkx = self.cord[0]
-		checky = self.cord[1]
-		checkx += 1
-		while checkx != self.cord[0]:
-			if grid.gridcord[checkx][checky][2] == "Q":
-				enemy = True
-			checkx += 1
-			if checkx > 3:
-				checkx = 0
+		# # Checking vertical
+		# checkx = self.cord[0]
+		# checky = self.cord[1]
+		# checky += 1
+		# while checky != self.cord[1]:
+		# 	if checky > 3:
+		# 		checky = 0
+		# 	if grid.gridcord[checkx][checky][2] == "Q":
+		# 		enemy = True
+		# 	checky += 1
+
+		# # Checking horizontal
+		# checkx = self.cord[0]
+		# checky = self.cord[1]
+		# checkx += 1
+		# while checkx != self.cord[0]:
+		# 	if checkx > 3:
+		# 		checkx = 0
+		# 	if grid.gridcord[checkx][checky][2] == "Q":
+		# 		enemy = True
+		# 	checkx += 1
 
 		return (enemy)
 
@@ -109,32 +118,13 @@ if len(args) != 2:
 mygrid = Grid(int(args[1]))
 i = j = 0
 arr = []
-arr.append(Queen([0,0]))
+arr.append(Queen([3,3]))
 mygrid.addQueen(arr[0])
-
-v = True
-arr.append(Queen([0,1]))
-mygrid.addQueen(arr[1])
-num = 1
-while arr[num].checkAttack(mygrid) or v == False:
-	v = False
-	j += 1
-	if j >= mygrid.size:
-		i += 1
-		j = 0
-	arr.append(Queen([i, j]))
-	mygrid.addQueen(arr[num])
-	print(arr[num].cord)
-	num += 1
-	if arr[1].checkAttack(mygrid):
-		del arr[1]
-		num -= 1
 	
 
 			
-
 mygrid.printGridStr()
 mygrid.printGridCord()
-
+print(arr[0].checkAttack(mygrid))
 
 	
