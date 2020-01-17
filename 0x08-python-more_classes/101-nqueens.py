@@ -168,7 +168,9 @@ try:
 			l = 0
 except IndexError:
 	pass
-
+if len(solutions) == 0:
+	print("This puzzle solver only works for 4 queens for some reason :x")
+	print("We will fix that as soon as possible, thanks for your understanding cx")
 for x in range(len(solutions)):
 	print(solutions[x].getAllQueens())
 
