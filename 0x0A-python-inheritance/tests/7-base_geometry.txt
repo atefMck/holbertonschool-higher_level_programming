@@ -1,0 +1,24 @@
+This is a doctest based regression suite for 2-matrix_divided.py
+Each '>>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 420)
+>>> bg.integer_validator("width", 69)
+>>> try:
+...     bg.integer_validator("last_name", "Mechken")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] last_name must be an integer
+>>> try:
+...     bg.integer_validator("time", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] time must be greater than 0
+>>> try:
+...     bg.integer_validator("height", -10)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] height must be greater than 0
