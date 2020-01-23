@@ -13,3 +13,8 @@ class MyList(list):
         newList = eval(repr(self))
         newList.sort()
         print(newList)
+
+    def __str__(self):
+        """returns the list
+        """
+        return (str(list(self)))
