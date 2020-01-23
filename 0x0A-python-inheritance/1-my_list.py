@@ -10,11 +10,8 @@ class MyList(list):
     """
     def print_sorted(self):
         """ This method prints the list sorted """
-        newList = eval(repr(self))
-        newList.sort()
-        print(newList)
+        print(sorted(self))
 
     def __str__(self):
-        """returns the list
-        """
+        """ returns the list """
         return (str(list(self)))
