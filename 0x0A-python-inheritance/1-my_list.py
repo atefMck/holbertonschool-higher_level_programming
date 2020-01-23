@@ -10,7 +10,5 @@ class MyList(list):
     """
     def print_sorted(self):
         """ This method prints the list sorted """
-        newList = eval(repr(self))
-        newList.sort()
+        newList = self.sorted()
         print(newList)
-        return(newList)
