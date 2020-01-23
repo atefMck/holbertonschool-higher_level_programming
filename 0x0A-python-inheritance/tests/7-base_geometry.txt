@@ -7,6 +7,31 @@ If anything doesn't match exactly (including trailing spaces), the test fails.
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 420)
 >>> bg.integer_validator("width", 69)
+>>> bg.integer_validator(“age”, None)
+File "<stdin>", line 1
+  bg.integer_validator(“age”, None)
+                       ^
+SyntaxError: invalid syntax
+>>> bg.integer_validator(“age”, (4,))
+File "<stdin>", line 1
+  bg.integer_validator(“age”, (4,))
+                       ^
+SyntaxError: invalid syntax
+>>> bg.integer_validator(“age”, [3])
+File "<stdin>", line 1
+  bg.integer_validator(“age”, (4,))
+                       ^
+SyntaxError: invalid syntax
+>>> bg.integer_validator(“age”, True)
+File "<stdin>", line 1
+  bg.integer_validator(“age”, (4,))
+                       ^
+SyntaxError: invalid syntax
+>>> bg.integer_validator(“age”, {3, 4})
+File "<stdin>", line 1
+  bg.integer_validator(“age”, (4,))
+                       ^
+SyntaxError: invalid syntax
 >>> try:
 ...     bg.integer_validator("last_name", "Mechken")
 ... except Exception as e:
