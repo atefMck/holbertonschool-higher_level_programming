@@ -13,3 +13,4 @@ class MyList(list):
         newList = eval(repr(self))
         newList.sort()
         print(newList)
+        return(newList)
