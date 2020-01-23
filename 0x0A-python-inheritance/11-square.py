@@ -5,7 +5,6 @@ This module adds a Squre subclass of Rectangle
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 Rectangle = __import__('9-rectangle').Rectangle
 
-
 class Square(Rectangle):
 	"""
 	This is the new Square class that inherits from Rectangle

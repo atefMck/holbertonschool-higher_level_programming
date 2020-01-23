@@ -3,7 +3,6 @@
 This module add a new class
 """
 
-
 class BaseGeometry:
 	"""
 	Empty class

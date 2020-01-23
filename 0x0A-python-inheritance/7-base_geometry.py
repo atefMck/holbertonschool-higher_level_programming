@@ -3,7 +3,6 @@
 Module adding a new class
 """
 
-
 class BaseGeometry:
     def area(self):
         """

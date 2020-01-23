@@ -3,7 +3,6 @@
 This module add a new int subclass
 """
 
-
 class MyInt(int):
 	"""
 	This is the int subclass

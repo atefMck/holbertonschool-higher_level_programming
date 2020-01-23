@@ -3,7 +3,6 @@
 This module add a new list class
 """
 
-
 class MyList(list):
 	"""
 	A subclass from list object

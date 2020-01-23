@@ -3,7 +3,6 @@
 This module add a better setattr function
 """
 
-
 def add_attribute(obj, atr, value):
 	"""
 	This function add an attribute to a class if possible
