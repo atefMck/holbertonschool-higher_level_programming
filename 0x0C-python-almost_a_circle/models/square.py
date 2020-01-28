@@ -46,3 +46,13 @@ class Square(Rectangle):
                 for atr in atrs:
                     if key == atr:
                         setattr(self, key, value)
+
+    def to_dictionary(self):
+        """method returning dict form of rectangle"""
+        square = {
+            "id": self.id,
+            "x": self.x,
+            "size": self.size,
+            "y": self.y
+            }
+        return(square)
