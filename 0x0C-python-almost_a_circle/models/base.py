@@ -31,3 +31,7 @@ class Base:
             list.append(obj.to_dictionary())
         file.write(cls.to_json_string(list))
         file.close()
+
+    def from_json_string(json_string):
+        """method parses json string to python list of objects"""
+        return(json.loads(json_string))
