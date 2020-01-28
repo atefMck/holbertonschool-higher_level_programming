@@ -112,3 +112,14 @@ class Rectangle(Base):
         string1 = "{}/{} ".format(self.__x, self.__y)
         string2 = "- {}/{}".format(self.__width, self.__height)
         return(string0 + string1 + string2)
+
+    def to_dictionary(self):
+        """method returning dict form of rectangle"""
+        rect = {
+            "x" : self.x,
+            "y" : self.y,
+            "id": self.id,
+            "height" : self.height,
+            "width" : self.width
+            }
+        return(rect)
