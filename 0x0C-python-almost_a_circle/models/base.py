@@ -20,16 +20,16 @@ class Base:
         """method converting python list of dic to jsop string"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return ("[]")
-        else:
-            return (json.dumps(list_dictionaries))
+        return (json.dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
         """method writes string repr of list of objs in a file"""
         name = cls.__name__ + ".json"
         list = []
-        for obj in list_objs:
-            list.append(obj.to_dictionary())
+        if list_objs is not None:
+            for obj in list_objs:
+                list.append(obj.to_dictionary())
         with open(name, "w") as file:
             file.write(cls.to_json_string(list))
 
