@@ -85,28 +85,27 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """method updating rectangle"""
-        if len(args) == 1:
-            self.id = args[0]
-        if len(args) == 2:
-            self.id = args[0]
-            self.__width = args[1]
-        if len(args) == 3:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-        if len(args) == 4:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-        if len(args) == 5:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
+        atrs = ["id", "width", "height", "x", "y"]
+        if args:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.__width = args[i]
+                if i == 2:
+                    self.__height = args[i]
+                if i == 3:
+                    self.__x = args[i]
+                if i == 4:
+                    self.__y = args[i]
+        elif kwargs:
+            for key, value in kwargs.items():
+                for atr in atrs:
+                    if key == atr:
+                        setattr(self, key, value)
+
 
     def __str__(self):
         """method formatting string rectangle output"""
