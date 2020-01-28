@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This module contains the Base class"""
+import json
 
 
 class Base:
@@ -7,9 +8,16 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ instantiation """
+        """Init method"""
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """method converting python list of dic to jsop string"""
+        if not list_dictionaries:
+            return ('[]')
+        else:
+            return (json.dumps(list_dictionaries))
