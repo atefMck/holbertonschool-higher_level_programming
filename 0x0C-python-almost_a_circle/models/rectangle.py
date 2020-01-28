@@ -106,10 +106,9 @@ class Rectangle(Base):
                     if key == atr:
                         setattr(self, key, value)
 
-
     def __str__(self):
         """method formatting string rectangle output"""
-        string0 = "[Rectangle] ({}) ".format(self.id)
+        string0 = "[{}] ({}) ".format(self.__class__.__name__, self.id)
         string1 = "{}/{} ".format(self.__x, self.__y)
         string2 = "- {}/{}".format(self.__width, self.__height)
         return(string0 + string1 + string2)
