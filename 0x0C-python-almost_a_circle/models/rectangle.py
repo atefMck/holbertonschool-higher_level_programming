@@ -115,10 +115,11 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """method returning dict form of rectangle"""
-        rect = dict()
-        rect["id"] = self.id
-        rect["width"] = self.width
-        rect["height"] = self.height
-        rect["x"] = self.x
-        rect["y"] = self.y
+        rect = {
+            "x": self.x,
+            "y": self.y,
+            "id": self.id,
+            "height": self.height,
+            "width": self.width
+            }
         return(rect)
