@@ -44,3 +44,15 @@ class Base:
         dummy = cls(5,5)
         dummy.update(**dictionary)
         return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """method writes string repr of list of objs in a file"""
+        name = cls.__name__ + ".json"
+        file = open(name, "r")
+        data = cls.from_json_string(file.read())
+        list = []
+        for obj in data:
+            list.append(cls.create(**obj))
+        file.close()
+        return (list)
