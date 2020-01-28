@@ -15,6 +15,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """method converting python list of dic to jsop string"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
@@ -22,6 +23,7 @@ class Base:
         else:
             return (json.dumps(list_dictionaries))
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """method writes string repr of list of objs in a file"""
         name = cls.__name__ + ".json"
@@ -32,6 +34,13 @@ class Base:
         file.write(cls.to_json_string(list))
         file.close()
 
+    @staticmethod
     def from_json_string(json_string):
         """method parses json string to python list of objects"""
         return(json.loads(json_string))
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(5,5)
+        dummy.update(**dictionary)
+        return (dummy)
