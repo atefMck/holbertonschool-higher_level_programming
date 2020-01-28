@@ -2,6 +2,7 @@
 """Rectange Class."""
 from models.base import Base
 
+
 class Rectangle(Base):
     """New Rectange Class, inheriting from Base."""
 
@@ -107,10 +108,9 @@ class Rectangle(Base):
             self.__x = args[3]
             self.__y = args[4]
 
-
     def __str__(self):
         """method formatting string rectangle output"""
         string0 = "[Rectangle] ({}) ".format(self.id)
-        string1 =  "{}/{} ".format(self.__x, self.__y)
+        string1 = "{}/{} ".format(self.__x, self.__y)
         string2 = "- {}/{}".format(self.__width, self.__height)
-        return(string0 + string1 +string2)
+        return(string0 + string1 + string2)
