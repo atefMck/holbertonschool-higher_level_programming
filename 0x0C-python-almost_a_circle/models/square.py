@@ -49,10 +49,10 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """method returning dict form of rectangle"""
-        square = {
-            "id": self.id,
-            "x": self.x,
-            "size": self.size,
-            "y": self.y
-            }
+        square = dict()
+        square["id"] = self.id
+        square["width"] = self.width
+        square["height"] = self.height
+        square["x"] = self.x
+        square["y"] = self.y
         return(square)
