@@ -1,3 +1,3 @@
 #!/bin/bash
 chmod +x $1
-cat $1 | sudo mysql -hlocalhost -uroot -pImmabombyou666 $2
+cat $1 | sudo mysql -hlocalhost -uroot -pa $2
