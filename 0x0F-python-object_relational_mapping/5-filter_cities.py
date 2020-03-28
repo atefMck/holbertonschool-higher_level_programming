@@ -12,12 +12,12 @@ if __name__ == "__main__":
     i = 0
     for row in query_rows:
         if row[0] == row[3]:
-            if sys.argv[4] == row[1]:
+            if sys.argv[4] == row[1] and i == 0:
                 print("{}".format(row[4]), end="")
                 i = i + 1
-                if i != len(row) + 1:
-                    print(", ", end="")
-                else:
-                    print()
+                continue
+            if sys.argv[4] == row[1] and i != 0:
+                print(", {}".format(row[4]), end="")
+    print()
     cur.close()
     conn.close()
