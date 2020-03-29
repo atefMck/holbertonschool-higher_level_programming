@@ -16,6 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
+    all = session.query(State).order_by(State.id).all()
     newState = State(name='Louisiana')
     session.add(newState)
     session.commit()
