@@ -14,8 +14,8 @@ def find_peak(list_of_integers):
         right = list_of_integers[mid + 1]
         if (mid == 0 or peak >= left) and (mid == length - 1 or peak >= right):
             break
-        elif mid > 0 and peak < left:
-            end = mid - 1
-        else:
+        elif mid < length - 1 and peak < right:
             start = mid + 1
+        else:
+            end = mid - 1
     return peak
