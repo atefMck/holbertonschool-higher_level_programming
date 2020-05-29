@@ -7,7 +7,9 @@ from sys import argv
 def execute():
     """ Intermediate method for checker. """
     req = requests.get(argv[1])
-    print(req.status_code)
+    stat = req.status_code
+    if stat >= 400:
+        print("Error code: ", req.status_code)
 
 
 if __name__ == "__main__":
