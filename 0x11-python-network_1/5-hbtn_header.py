@@ -6,11 +6,8 @@ from sys import argv
 
 def execute():
     """ Intermediate method for checker. """
-    try:
-        req = requests.get(argv[1])
-        print(req.headers["X-Request-Id"])
-    except requests.exceptions.ConnectionError as e:
-        pass
+    req = requests.get(argv[1])
+    print(req.headers.get("X-Request-Id"))
 
 
 if __name__ == "__main__":
