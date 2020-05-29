@@ -9,7 +9,9 @@ def execute():
     req = requests.get(argv[1])
     stat = req.status_code
     if stat >= 400:
-        print("Error code: ", req.status_code)
+        print("Error code:", req.status_code)
+    else:
+        print(req.text)
 
 
 if __name__ == "__main__":
