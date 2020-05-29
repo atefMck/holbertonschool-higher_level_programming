@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ Python script """
 from sys import argv
-from urllib import request
-from urllib import parse
+from urllib import request, parse
 
 
 def execute():
