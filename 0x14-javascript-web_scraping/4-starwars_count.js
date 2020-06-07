@@ -7,7 +7,7 @@ request(link, function (error, response, body) {
   const data = JSON.parse(body).results;
   for (let i = 0; i < data.length; i++) {
     const chars = data[i].characters;
-    if (chars.find(el => el.includes('/api/people/18/'))) {
+    if (chars.find(str => str.includes('/api/people/18/'))) {
       matches++;
     }
   }
