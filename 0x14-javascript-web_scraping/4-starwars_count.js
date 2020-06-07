@@ -1,0 +1,15 @@
+#!/usr/bin/node
+const request = require('request');
+const link = 'https://swapi-api.hbtn.io/api/films/';
+let matches = 0;
+request(link, function (error, response, body) {
+  if (error) throw error;
+  const data = JSON.parse(body).results;
+  for (let i = 0; i < data.length; i++) {
+    const chars = data[i].characters;
+    if (chars.find(el => el.includes('/api/people/18/'))) {
+      matches++;
+    }
+  }
+  console.log(matches);
+});
