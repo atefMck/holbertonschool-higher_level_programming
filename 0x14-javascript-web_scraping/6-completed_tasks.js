@@ -5,7 +5,7 @@ const completed = {};
 request(link, function (error, response, body) {
   if (error) throw error;
   const data = JSON.parse(body);
-  for (var i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (data[i].completed === true) {
       if (completed[data[i].userId]) {
         completed[data[i].userId] += 1;
